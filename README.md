@@ -1,832 +1,113 @@
-# 🐧 Professional Development Environment Setup
-> High-Performance Linux Terminal + VS Code Configuration
 
-This repository provides a reproducible Linux development environment designed to improve terminal productivity and developer workflow using modern CLI tools and a fully configured VS Code environment.
+# 🐉 CaesarCode: Red Dragon Configuration
+> **High-Performance Linux Development Environment & VS Code Sync**
 
-**Supported distributions:**
-- Debian
-- Ubuntu
-- Kali Linux
-
-This environment focuses on:
-- Modern terminal workflow
-- Advanced shell productivity
-- Powerful CLI utilities
-- Fully synchronized VS Code configuration
+This repository provides an automated configuration to transform a standard Linux terminal (Debian/Ubuntu/Kali) into a high-performance environment, optimized for productivity with a striking **"Red Dragon"** aesthetic.
 
 ---
 
-## 🐧 1. Automated Deployment
-# 🐧 Professional Development Environment Setup
-> High-Performance Linux Terminal + VS Code Configuration
+## 🚀 1. Quick Start (Execution)
 
-This repository provides a reproducible Linux development environment designed to improve terminal productivity and developer workflow using modern CLI tools and a fully configured VS Code environment.
+Follow these steps to deploy the full environment. The installer handles dependencies, shell configuration, and VS Code themes.
 
-**Supported distributions:**
-- Debian
-- Ubuntu
-- Kali Linux
+### Prerequisites
+* A Debian-based distribution (Ubuntu, Kali, Parrot, etc.).
+* `git` and `curl` installed.
 
-This environment focuses on:
-- Modern terminal workflow
-- Advanced shell productivity
-- Powerful CLI utilities
-- Fully synchronized VS Code configuration
-
----
-
-## 🐧 1. Automated Deployment
-
-The fastest way to configure the full environment is using the master installation script.
-
-**Instalación:**
-```bash
-chmod +x install.sh
-./install.sh
-
-Run installer:
-```bash
-./install.sh
-```
-
-This script will automatically configure:
-- Zsh shell
-- Oh My Zsh framework
-- Terminal plugins
-- CLI productivity tools
-- VS Code extensions
-- VS Code configuration
+### Installation
+| Step | Action | Command |
+| :--- | :--- | :--- |
+| **1** | Clone the repo | `git clone https://github.com/ICaesarI/CaesarCode-Configuration-Script.git` |
+| **2** | Enter directory | `cd CaesarCode-Configuration-Script` |
+| **3** | Grant permissions | `chmod +x install.sh scripts/*.sh` |
+| **4** | Run Installer | `./install.sh` |
 
 ---
 
-## 🐧 2. Manual Modular Installation
+## 🐧 2. Ecosystem Components
 
-If you prefer installing each tool individually, follow the sections below.
+### 🛠 A. Shell & Terminal Foundation
+* **[Zsh](https://github.com/zsh-users/zsh):** Advanced shell with better scripting and auto-completion.
+* **[Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh):** Framework for managing plugins and themes.
+* **[Powerlevel10k](https://github.com/romkatv/powerlevel10k):** High-performance theme. *Note: Requires Hack Nerd Font for icons.*
 
----
+### ⚡ B. Productivity Plugins (Zsh)
+| Plugin | Description |
+| :--- | :--- |
+| **Autosuggestions** | Predicts commands based on your history. |
+| **Syntax Highlighting** | Real-time color coding for terminal commands. |
+| **FZF** | Intelligent fuzzy finder for files and processes (`Ctrl + R`). |
 
-### 🐧 A. Terminal Foundation
-
-#### Zsh Shell
-> [GitHub Repository](https://github.com/zsh-users/zsh)
-
-Zsh is an advanced shell designed to replace Bash with improved usability, scripting capabilities, and plugin support.
-
-Install Zsh:
-```bash
-sudo apt update
-sudo apt install zsh -y
-```
-
-Verify installation:
-```bash
-zsh --version
-```
-
-Set Zsh as default shell:
-```bash
-chsh -s $(which zsh)
-```
-> Log out and log back in for the change to take effect.
+### 🐉 C. Modern CLI Utilities
+* **[Fastfetch](https://github.com/fastfetch-cli/fastfetch):** System info with **Red Dragon** ASCII Art.
+* **[LSD](https://github.com/lsd-rs/lsd):** `ls` on steroids with icons, colors, and tree mode.
+* **[Bat](https://github.com/sharkdp/bat):** A `cat` clone with syntax highlighting and Git integration.
+* **[Bottom (btm)](https://github.com/ClementTsang/bottom):** Modern graphical system monitor.
+* **[Atuin](https://github.com/atuinsh/atuin):** Magical synced shell history search.
 
 ---
 
-#### Oh My Zsh
-> [GitHub Repository](https://github.com/ohmyzsh/ohmyzsh)
+## 💻 3. VS Code Setup
 
-Oh My Zsh is a framework for managing Zsh configuration with themes and plugins.
+Sync your favorite editor using the included scripts:
 
-Install:
-```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
-
-Configuration file: `~/.zshrc`
-
-Example plugin config:
-```bash
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
-```
+1.  **Install recommended extensions:**
+    ```bash
+    ./scripts/install-ext.sh
+    ```
+2.  **Sync `settings.json`:**
+    ```bash
+    ./scripts/update-settings.sh
+    ```
+    *This links `configs/settings.json` to your local User folder.*
 
 ---
 
-#### Zsh Autosuggestions
-> [GitHub Repository](https://github.com/zsh-users/zsh-autosuggestions)
+## 📂 Project Structure
 
-Provides real-time command suggestions based on shell history.
-
-Installation:
-```bash
-git clone https://github.com/zsh-users/zsh-autosuggestions \
-  ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+```text
+CaesarCode-Configuration-Script/
+├── 📄 install.sh              # Main installation entry point
+├── 📄 README.md               # Documentation
+├── 📁 configs/
+│   ├── ⚙️ settings.json       # Pro VS Code configuration
+│   └── 🐉 dragon.txt          # Custom ASCII Art
+└── 📁 scripts/
+    ├── 🐚 setup-zsh.sh        # Zsh & Plugins logic
+    ├── 🧩 install-ext.sh      # VS Code extensions installer
+    └── 🔗 update-settings.sh  # Configuration symlinking
 ```
+---
 
-Enable plugin in `.zshrc`:
-```bash
-plugins=(git zsh-autosuggestions)
-```
+## 📊 Quick Aliases Summary
 
-Reload configuration:
-```bash
-source ~/.zshrc
-```
+Once installed, use these shorthand commands for maximum efficiency:
+
+| Tool | Original Command | **CaesarCode Alias** |
+| :--- | :--- | :--- |
+| **Fastfetch** | `fastfetch` | `fetch` |
+| **LSD (List)** | `lsd -l` | `ll` |
+| **LSD (Tree)** | `lsd --tree` | `lt` |
+| **Bottom** | `btm` | `top` |
+| **Batcat** | `batcat` | `cat` |
+| **IPython** | `ipython` | `py` |
 
 ---
 
-#### Zsh Syntax Highlighting
-> [GitHub Repository](https://github.com/zsh-users/zsh-syntax-highlighting)
+## ⚠️ Font Configuration (Important)
 
-Adds syntax highlighting to terminal commands.
+To ensure icons and symbols render correctly in both the terminal and VS Code, you **must** use a "Nerd Font."
 
-Installation:
-```bash
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
-  ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-```
-
-Enable plugin:
-```bash
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
-```
-
-Reload configuration:
-```bash
-source ~/.zshrc
-```
+👉 **Recommended:** [Hack Nerd Font Mono](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/Hack.zip)
 
 ---
 
-#### Powerlevel10k Theme
-> [GitHub Repository](https://github.com/romkatv/powerlevel10k)
+## 📧 Contact & Contributions
 
-Powerlevel10k is a high-performance Zsh prompt with extensive customization.
+Feel free to reach out or contribute to the project:
 
-Clone theme:
-```bash
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git \
-  ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-```
-
-Enable theme in `.zshrc`:
-```bash
-ZSH_THEME="powerlevel10k/powerlevel10k"
-```
-
-Run configuration wizard:
-```bash
-p10k configure
-```
+* **LinkedIn:** [Cesar Gonzalez](https://www.linkedin.com/in/cesargonzalez-dev)
+* **GitHub:** [ICaesarI](https://github.com/ICaesarI)
+* **Email:** [cesar.gonzalez.anayadev@gmail.com](mailto:cesar.gonzalez.anayadev@gmail.com)
 
 ---
-
-### 🐧 B. Modern Terminal Utilities
-
-#### LSD (Modern ls replacement)
-> [GitHub Repository](https://github.com/lsd-rs/lsd)
-
-Provides icons, colors, and improved file listing.
-
-Installation:
-```bash
-sudo apt install lsd
-```
-
-Recommended alias:
-```bash
-alias ls='lsd'
-```
-
----
-
-#### Bat (Modern cat replacement)
-> [GitHub Repository](https://github.com/sharkdp/bat)
-
-Adds syntax highlighting and Git integration to file viewing.
-
-Install:
-```bash
-sudo apt install bat
-```
-
-Fix Ubuntu binary naming:
-```bash
-mkdir -p ~/.local/bin
-ln -s /usr/bin/batcat ~/.local/bin/bat
-```
-
-Alias:
-```bash
-alias cat='bat'
-```
-
----
-
-#### Chafa (Terminal Image Renderer)
-> [GitHub Repository](https://github.com/hpjansson/chafa)
-
-Allows images to be rendered directly in the terminal.
-
-Installation:
-```bash
-sudo apt install chafa
-```
-
-Usage example:
-```bash
-chafa image.jpg
-```
-
----
-
-#### FZF (Fuzzy Finder)
-> [GitHub Repository](https://github.com/junegunn/fzf)
-
-Provides interactive fuzzy searching for files, directories, and command history.
-
-Installation:
-```bash
-sudo apt install fzf
-```
-
-Enable keybindings:
-```bash
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-```
-
-Example usage — `CTRL + R` for interactive history search.
-
----
-
-#### TLDR (Simplified Man Pages)
-> [GitHub Repository](https://github.com/tldr-pages/tldr)
-
-Provides simplified examples of common command usage.
-
-Installation:
-```bash
-sudo apt install tldr
-```
-
-Update command pages:
-```bash
-tldr --update
-```
-
-Example:
-```bash
-tldr tar
-```
-
----
-
-### 🐧 C. Advanced Productivity Tools
-
-#### Fastfetch
-> [GitHub Repository](https://github.com/fastfetch-cli/fastfetch)
-
-Displays system information in a fast and customizable format.
-
-Installation:
-```bash
-sudo add-apt-repository ppa:zhangsongcui3371/fastfetch
-sudo apt update
-sudo apt install fastfetch
-```
-
-Run:
-```bash
-fastfetch
-```
-
-> Optional: add `fastfetch` to `.zshrc` to show on every terminal launch.
-
----
-
-#### Bottom (Modern system monitor)
-> [GitHub Repository](https://github.com/ClementTsang/bottom)
-
-An advanced alternative to `top` or `htop`.
-
-Download latest release from: https://github.com/ClementTsang/bottom/releases
-
-Install:
-```bash
-sudo dpkg -i bottom*.deb
-```
-
-Alias:
-```bash
-alias top='btm'
-```
-
-Run:
-```bash
-btm
-```
-
----
-
-#### Atuin (Shell History Sync)
-> [GitHub Repository](https://github.com/atuinsh/atuin)
-
-Stores and synchronizes shell history across machines.
-
-Install:
-```bash
-curl https://raw.githubusercontent.com/atuinsh/atuin/main/install.sh | bash
-```
-
-Enable integration:
-```bash
-eval "$(atuin init zsh)"
-```
-
-Register:
-```bash
-atuin register
-```
-
-Login:
-```bash
-atuin login
-```
-
----
-
-## 🐧 3. VS Code Setup
-
-### Extensions Installation
-
-Run the extension installer script:
-```bash
-chmod +x scripts/install-ext.sh
-./scripts/install-ext.sh
-```
-
-Typical extensions installed:
-- Docker
-- GitLens
-- Python
-- SQLTools
-- Markdown Preview Enhanced
-
-### VS Code Settings Synchronization
-
-Configuration file: `configs/settings.json`
-
-Sync command:
-```bash
-scripts/update-settings.sh
-```
-
-Destination:
-```
-~/.config/Code/User/settings.json
-```
-
----
-
-## 🐧 Repository Structure
-
-```
-my-environment/
-├── install.sh             
-├── README.md
-├── configs/
-│   ├── settings.json      
-│   └── dragon.txt          
-└── scripts/
-    ├── setup-zsh.sh        
-    ├── install-ext.sh     
-    └── update-settings.sh  
-```
-
----
-
-## 🐧 Configuration Summary
-
-## 🐧 Configuration Summary
-
-| Tool | Original Command | Zsh Alias | Function |
-| :--- | :--- | :--- | :--- |
-| **LSD** | `lsd` | `ls`, `ll`, `la`, `lt` | Modern file listing & trees |
-| **Bat** | `bat` | `cat` | Syntax highlighting for files |
-| **Bottom** | `btm` | `top` | Graphical system monitor |
-| **Fastfetch** | `fastfetch` | `fetch` | System info + Dragon Art |
-| **Atuin** | `atuin` | `Ctrl + R` | Magical shell history search |
-
----
-
-## 🐧 Final Notes
-
-This development environment provides:
-- Faster terminal workflows
-- Modern CLI utilities
-- Powerful command history search
-- Fully synchronized VS Code setup
-- Modular and reproducible configuration
-
-
-## 📧 Contact
-
-Feel free to reach out or contribute:
-
--   **LinkedIn:** Cesar Gonzalez
--   **GitHub:** ICaesarI
--   **Email:** cesar.gonzalez.anayadev@gmail.com
-The fastest way to configure the full environment is using the master installation script.
-
-Give execution permissions:
-```bash
-chmod +x install.sh scripts/*.sh
-```
-
-Run installer:
-```bash
-./install.sh
-```
-
-This script will automatically configure:
-- Zsh shell
-- Oh My Zsh framework
-- Terminal plugins
-- CLI productivity tools
-- VS Code extensions
-- VS Code configuration
-
----
-
-## 🐧 2. Manual Modular Installation
-
-If you prefer installing each tool individually, follow the sections below.
-
----
-
-### 🐧 A. Terminal Foundation
-
-#### Zsh Shell
-> [GitHub Repository](https://github.com/zsh-users/zsh)
-
-Zsh is an advanced shell designed to replace Bash with improved usability, scripting capabilities, and plugin support.
-
-Install Zsh:
-```bash
-sudo apt update
-sudo apt install zsh -y
-```
-
-Verify installation:
-```bash
-zsh --version
-```
-
-Set Zsh as default shell:
-```bash
-chsh -s $(which zsh)
-```
-> Log out and log back in for the change to take effect.
-
----
-
-#### Oh My Zsh
-> [GitHub Repository](https://github.com/ohmyzsh/ohmyzsh)
-
-Oh My Zsh is a framework for managing Zsh configuration with themes and plugins.
-
-Install:
-```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
-
-Configuration file: `~/.zshrc`
-
-Example plugin config:
-```bash
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
-```
-
----
-
-#### Zsh Autosuggestions
-> [GitHub Repository](https://github.com/zsh-users/zsh-autosuggestions)
-
-Provides real-time command suggestions based on shell history.
-
-Installation:
-```bash
-git clone https://github.com/zsh-users/zsh-autosuggestions \
-  ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-```
-
-Enable plugin in `.zshrc`:
-```bash
-plugins=(git zsh-autosuggestions)
-```
-
-Reload configuration:
-```bash
-source ~/.zshrc
-```
-
----
-
-#### Zsh Syntax Highlighting
-> [GitHub Repository](https://github.com/zsh-users/zsh-syntax-highlighting)
-
-Adds syntax highlighting to terminal commands.
-
-Installation:
-```bash
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
-  ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-```
-
-Enable plugin:
-```bash
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
-```
-
-Reload configuration:
-```bash
-source ~/.zshrc
-```
-
----
-
-#### Powerlevel10k Theme
-> [GitHub Repository](https://github.com/romkatv/powerlevel10k)
-
-Powerlevel10k is a high-performance Zsh prompt with extensive customization.
-
-Clone theme:
-```bash
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git \
-  ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-```
-
-Enable theme in `.zshrc`:
-```bash
-ZSH_THEME="powerlevel10k/powerlevel10k"
-```
-
-Run configuration wizard:
-```bash
-p10k configure
-```
-
----
-
-### 🐧 B. Modern Terminal Utilities
-
-#### LSD (Modern ls replacement)
-> [GitHub Repository](https://github.com/lsd-rs/lsd)
-
-Provides icons, colors, and improved file listing.
-
-Installation:
-```bash
-sudo apt install lsd
-```
-
-Recommended alias:
-```bash
-alias ls='lsd'
-```
-
----
-
-#### Bat (Modern cat replacement)
-> [GitHub Repository](https://github.com/sharkdp/bat)
-
-Adds syntax highlighting and Git integration to file viewing.
-
-Install:
-```bash
-sudo apt install bat
-```
-
-Fix Ubuntu binary naming:
-```bash
-mkdir -p ~/.local/bin
-ln -s /usr/bin/batcat ~/.local/bin/bat
-```
-
-Alias:
-```bash
-alias cat='bat'
-```
-
----
-
-#### Chafa (Terminal Image Renderer)
-> [GitHub Repository](https://github.com/hpjansson/chafa)
-
-Allows images to be rendered directly in the terminal.
-
-Installation:
-```bash
-sudo apt install chafa
-```
-
-Usage example:
-```bash
-chafa image.jpg
-```
-
----
-
-#### FZF (Fuzzy Finder)
-> [GitHub Repository](https://github.com/junegunn/fzf)
-
-Provides interactive fuzzy searching for files, directories, and command history.
-
-Installation:
-```bash
-sudo apt install fzf
-```
-
-Enable keybindings:
-```bash
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-```
-
-Example usage — `CTRL + R` for interactive history search.
-
----
-
-#### TLDR (Simplified Man Pages)
-> [GitHub Repository](https://github.com/tldr-pages/tldr)
-
-Provides simplified examples of common command usage.
-
-Installation:
-```bash
-sudo apt install tldr
-```
-
-Update command pages:
-```bash
-tldr --update
-```
-
-Example:
-```bash
-tldr tar
-```
-
----
-
-### 🐧 C. Advanced Productivity Tools
-
-#### Fastfetch
-> [GitHub Repository](https://github.com/fastfetch-cli/fastfetch)
-
-Displays system information in a fast and customizable format.
-
-Installation:
-```bash
-sudo add-apt-repository ppa:zhangsongcui3371/fastfetch
-sudo apt update
-sudo apt install fastfetch
-```
-
-Run:
-```bash
-fastfetch
-```
-
-> Optional: add `fastfetch` to `.zshrc` to show on every terminal launch.
-
----
-
-#### Bottom (Modern system monitor)
-> [GitHub Repository](https://github.com/ClementTsang/bottom)
-
-An advanced alternative to `top` or `htop`.
-
-Download latest release from: https://github.com/ClementTsang/bottom/releases
-
-Install:
-```bash
-sudo dpkg -i bottom*.deb
-```
-
-Alias:
-```bash
-alias top='btm'
-```
-
-Run:
-```bash
-btm
-```
-
----
-
-#### Atuin (Shell History Sync)
-> [GitHub Repository](https://github.com/atuinsh/atuin)
-
-Stores and synchronizes shell history across machines.
-
-Install:
-```bash
-curl https://raw.githubusercontent.com/atuinsh/atuin/main/install.sh | bash
-```
-
-Enable integration:
-```bash
-eval "$(atuin init zsh)"
-```
-
-Register:
-```bash
-atuin register
-```
-
-Login:
-```bash
-atuin login
-```
-
----
-
-## 🐧 3. VS Code Setup
-
-### Extensions Installation
-
-Run the extension installer script:
-```bash
-chmod +x scripts/install-ext.sh
-./scripts/install-ext.sh
-```
-
-Typical extensions installed:
-- Docker
-- GitLens
-- Python
-- SQLTools
-- Markdown Preview Enhanced
-
-### VS Code Settings Synchronization
-
-Configuration file: `configs/settings.json`
-
-Sync command:
-```bash
-scripts/update-settings.sh
-```
-
-Destination:
-```
-~/.config/Code/User/settings.json
-```
-
----
-
-## 🐧 Repository Structure
-
-```
-my-environment/
-│
-├── install.sh
-├── README.md
-│
-├── configs/
-│   └── settings.json
-│
-└── scripts/
-    ├── setup-zsh.sh
-    ├── install-ext.sh
-    └── update-settings.sh
-```
-
----
-
-## 🐧 Configuration Summary
-
-| Tool          | Command                              |
-|---------------|--------------------------------------|
-| Powerlevel10k | `p10k configure`                     |
-| Aliases       | Add to `.zshrc`                      |
-| Atuin         | `atuin register` then `atuin login`  |
-| Bat fix       | `ln -s /usr/bin/batcat ~/.local/bin/bat` |
-
----
-
-## 🐧 Final Notes
-
-This development environment provides:
-- Faster terminal workflows
-- Modern CLI utilities
-- Powerful command history search
-- Fully synchronized VS Code setup
-- Modular and reproducible configuration
-
-
-## 📧 Contact
-
-Feel free to reach out or contribute:
-
--   **LinkedIn:** Cesar Gonzalez
--   **GitHub:** ICaesarI
--   **Email:** cesar.gonzalez.anayadev@gmail.com# CaesarCode-Configuration-Script

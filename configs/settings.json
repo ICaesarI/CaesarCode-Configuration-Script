@@ -1,0 +1,139 @@
+{
+  "workbench.colorTheme": "Tokyo Night Storm",
+  "workbench.editor.empty.hint": "hidden",
+  "workbench.startupEditor": "none",
+  "workbench.activityBar.location": "hidden",
+  "workbench.sideBar.location": "right",
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+
+  // ==== EDITOR ====
+  "editor.formatOnSave": false,
+  "editor.wordWrap": "on",
+  "editor.cursorBlinking": "expand",
+  "editor.linkedEditing": true,
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  "editor.guides.bracketPairs": true,
+  "editor.minimap.enabled": false,
+  "editor.scrollbar.vertical": "hidden",
+  "editor.overviewRulerBorder": false,
+  "editor.hideCursorInOverviewRuler": true,
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.matchBrackets": "never",
+  "editor.glyphMargin": true,
+
+  // ==== TERMINAL ====
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.fontFamily": "'Cascadia Code', 'Courier New', monospace",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.cursorStyle": "underline",
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.drawBoldTextInBrightColors": true,
+  "terminal.integrated.minimumContrastRatio": 7,
+  "terminal.integrated.gpuAcceleration": "off","terminal.integrated.suggest.enabled": true,
+
+  // ==== VENTANA ====
+  "window.titleBarStyle": "custom",  // Mantiene la barra integrada y funcional
+  "window.controlsStyle": "default", // Se restauran los botones nativos
+  "window.systemColorTheme": "dark","window.autoDetectColorScheme": false,// ==== CUSTOMIZE UI ====
+  "customizeUI.animations": true,
+  "customizeUI.listRowHoverAnimation": true,
+  "customizeUI.activityBar": "bottom",
+  "customizeUI.statusBar": "hidden",
+
+  // ==== VIBRANCY ====
+  "vibrancy.enabled": true,
+  "vibrancy.theme": "acrylic",
+  "vibrancy.effect": "acrylic",
+  "vibrancy.opacity": 0.6,
+
+  // ==== ANIMACIONES ====
+  "animations.Enabled": true,
+  "animations.Focus-Dimming-Mode": "Everything But Editor and Terminal",
+  "animations.Install-Method": "Custom CSS and JS", // puedes quitar esta si no quieres nada de la ext
+
+  // ==== ARCHIVOS & EXPLORER ====
+  "files.autoSave": "afterDelay",
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  "explorer.compactFolders": false,
+
+  // ==== GIT ====
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.openRepositoryInParentFolders": "never",
+
+  // ==== JAVASCRIPT ====
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "python.analysis.typeCheckingMode": "basic",
+  "python.languageServer": "Pylance",
+
+  // ==== LIVE SERVER ====
+  "liveServer.settings.donotShowInfoMsg": true,
+  "liveServer.settings.port": 5500,
+  "liveServer.settings.root": "/src",
+
+  // ==== COPILOT ====
+  "github.copilot.advanced": {
+    "authProvider": "github"
+  },
+
+  // ==== SEGURIDAD ====
+  "security.workspace.trust.untrustedFiles": "open",
+
+  // ==== INDENT RAINBOW ====
+  "indentRainbow.indicatorStyle": "light",
+  "indentRainbow.lightIndicatorStyleLineWidth": 1,
+  "indentRainbow.colors": [
+    "rgba(255,255,64,0.3)",
+    "rgba(127,255,127,0.3)",
+    "rgba(255,127,255,0.3)",
+    "rgba(79,236,236,0.3)"
+  ],
+
+  // ==== MSSQL ====
+  "mssql.connectionGroups": [
+    {
+      "name": "ROOT",
+      "id": "ROOT"
+    }
+  ],
+  "mssql.connections": [],
+
+  // ==== COLORES CUSTOM ====
+  "workbench.colorCustomizations": {
+    },
+    "code-runner.runInTerminal": true,
+    "C_Cpp.autocompleteAddParentheses": true,
+    "vscode_custom_css.imports": [
+      "file:///c:/Users/La TryHard/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.7/dist/updateHandler.js"
+    ],
+    "terminal.integrated.allowedLinkSchemes": [
+      "file",
+      "http",
+      "https",
+      "mailto",
+      "vscode",
+      "vscode-insiders",
+      "docker-desktop"
+    ],
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "launch": {
+      "configurations": [
+      
+      ]
+    },
+    "workbench.iconTheme": "bearded-icons",
+    "gitlens.ai.model": "vscode",
+    "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+    "gitlens.graph.minimap.enabled": false,
+    "window.newWindowProfile": "Predeterminado",
+    "workbench.editorAssociations": {
+      "*.copilotmd": "vscode.markdown.preview.editor",
+      "*.docx": "default"
+    },
+    "editor.fontLigatures": false,
+    "workbench.settings.applyToAllProfiles": [
+      
+    ],
+    "editor.fontVariations": false
+}
