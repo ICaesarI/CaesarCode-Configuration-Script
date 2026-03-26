@@ -26,24 +26,25 @@ Follow these steps to deploy the full environment. The installer handles depende
 
 ## 🐧 2. Ecosystem Components
 
-### 🛠 A. Shell & Terminal Foundation
-* **[Zsh](https://github.com/zsh-users/zsh):** Advanced shell with better scripting and auto-completion.
-* **[Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh):** Framework for managing plugins and themes.
-* **[Powerlevel10k](https://github.com/romkatv/powerlevel10k):** High-performance theme. *Note: Requires Hack Nerd Font for icons.*
+### A. Shell & Terminal Foundation
+* **Zsh:** Advanced shell with better scripting and auto-completion.
+* **Oh My Zsh:** Framework for managing plugins and themes.
+* **Powerlevel10k:** High-performance theme configured with "Instant Prompt" for speed.
+* **Atuin:** Magical shell history search with SQLite backend.
 
-### ⚡ B. Productivity Plugins (Zsh)
-| Plugin | Description |
+### B. Productivity & Development
+* **IPython:** Interactive Python shell with syntax highlighting and completion.
+* **FZF:** Intelligent fuzzy finder for files and processes (`Ctrl + R`).
+* **Highlight on Copy:** Visual feedback when copying text in VS Code (Red themed).
+
+### C. Modern CLI Utilities
+| Tool | Description |
 | :--- | :--- |
-| **Autosuggestions** | Predicts commands based on your history. |
-| **Syntax Highlighting** | Real-time color coding for terminal commands. |
-| **FZF** | Intelligent fuzzy finder for files and processes (`Ctrl + R`). |
-
-### 🐉 C. Modern CLI Utilities
-* **[Fastfetch](https://github.com/fastfetch-cli/fastfetch):** System info with **Red Dragon** ASCII Art.
-* **[LSD](https://github.com/lsd-rs/lsd):** `ls` on steroids with icons, colors, and tree mode.
-* **[Bat](https://github.com/sharkdp/bat):** A `cat` clone with syntax highlighting and Git integration.
-* **[Bottom (btm)](https://github.com/ClementTsang/bottom):** Modern graphical system monitor.
-* **[Atuin](https://github.com/atuinsh/atuin):** Magical synced shell history search.
+| **Fastfetch** | Next-gen system info with Red Dragon ASCII Art. |
+| **Neofetch** | Classic system information tool. |
+| **LSD** | Next-gen `ls` with icons and tree mode. |
+| **Bat** | A `cat` clone with syntax highlighting and Git integration. |
+| **Bottom (btm)** | Modern graphical system monitor. |
 
 ---
 
@@ -91,6 +92,7 @@ Once installed, use these shorthand commands for maximum efficiency:
 | **Bottom** | `btm` | `top` |
 | **Batcat** | `batcat` | `cat` |
 | **IPython** | `ipython` | `py` |
+| **Neofetch** | `neofetch` | `neo` |
 
 ---
 

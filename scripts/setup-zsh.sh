@@ -5,11 +5,10 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(dirname "$SCRIPT_DIR")"
 
 # --- 1. Dependencies & System Cleanup ---
-# Eliminamos basura y aseguramos que 'unzip' esté presente para las fuentes
 sudo rm -f /etc/apt/sources.list.d/spotify.list /etc/apt/sources.list.d/warp.list
 sudo apt update && sudo apt install -y \
     zsh git curl fzf tldr lsd chafa bat software-properties-common \
-    python3 python3-pip python3-ipython unzip
+    python3 python3-pip python3-ipython unzip neofetch
 
 # Fix para el nombre de 'bat' en Debian/Ubuntu
 mkdir -p ~/.local/bin
@@ -17,7 +16,7 @@ ln -s /usr/bin/batcat ~/.local/bin/bat 2>/dev/null
 
 # --- 2. Herramientas Externas & Fuentes ---
 
-# 2.1 Hack Nerd Font (Imprescindible para iconos de lsd)
+# 2.1 Hack Nerd Font
 echo "Instalando Hack Nerd Font..."
 FONT_DIR="$HOME/.local/share/fonts/HackNerdFont"
 if [ ! -d "$FONT_DIR" ]; then
@@ -29,7 +28,7 @@ if [ ! -d "$FONT_DIR" ]; then
     echo " [✓] Fuente instalada."
 fi
 
-# 2.2 Fastfetch (Repositorio oficial para tener la última versión)
+# 2.2 Fastfetch
 sudo add-apt-repository -y ppa:zhangsongcui3371/fastfetch
 sudo apt update && sudo apt install -y fastfetch
 
@@ -50,12 +49,13 @@ P10K_DIR="$ZSH_CUSTOM_DIR/themes/powerlevel10k"
 [[ ! -d "$ZSH_CUSTOM_DIR/plugins/zsh-autosuggestions" ]] && git clone https://github.com/zsh-users/zsh-autosuggestions "$ZSH_CUSTOM_DIR/plugins/zsh-autosuggestions"
 [[ ! -d "$ZSH_CUSTOM_DIR/plugins/zsh-syntax-highlighting" ]] && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$ZSH_CUSTOM_DIR/plugins/zsh-syntax-highlighting"
 
-# --- 5. Atuin (Historial inteligente) ---
+# --- 5. Atuin ---
 if ! command -v atuin &> /dev/null; then
     curl --proto '=https' --tlsv1.2 -sSf https://setup.atuin.sh | sh -s -- --accept-all
+    export ATUIN_NOBIND="true" 
 fi
 
-# --- 6. Configuración de Fastfetch (El Dragón Rojo) ---
+# --- 6. Configuración de Fastfetch ---
 mkdir -p ~/.config/fastfetch/
 cat > ~/.config/fastfetch/config.jsonc << 'EOF'
 {
@@ -76,27 +76,18 @@ cat > ~/.config/fastfetch/config.jsonc << 'EOF'
 EOF
 
 # --- 7. Inyección en .zshrc ---
-
-# Limpiar .zshrc de basura previa (incluyendo el error de Instant Prompt)
 sed -i '/typeset -g POWERLEVEL9K_INSTANT_PROMPT/d' ~/.zshrc
 sed -i '/# --- START CUSTOM CONFIG ---/,/# --- END CUSTOM CONFIG ---/d' ~/.zshrc
-
-# 1. Poner Instant Prompt al inicio (MODO QUIET para evitar el error que tenías)
 sed -i '1i typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet' ~/.zshrc
-
-# 2. Configurar Tema y Plugins
 sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="powerlevel10k\/powerlevel10k"/' ~/.zshrc
 sed -i 's/plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting)/' ~/.zshrc
 
-# 3. Bloque de configuración personalizada al final
 cat << 'EOF' >> ~/.zshrc
 
 # --- START CUSTOM CONFIG ---
-# Atuin Init
 export PATH="$HOME/.atuin/bin:$PATH"
 eval "$(atuin init zsh)"
 
-# fzf Key Bindings
 [ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] && source /usr/share/doc/fzf/examples/key-bindings.zsh
 
 # Aliases
@@ -107,12 +98,11 @@ alias lt='lsd --tree'
 alias cat='bat'
 alias top='btm'
 alias fetch='fastfetch'
-alias py='ipython'
+alias neo='neofetch'
+alias py='python3 -m IPython'
 
-# Auto-CD (Prioridad Escritorio)
 [ -d "$HOME/Desktop" ] && cd "$HOME/Desktop" || [ -d "$HOME/Escritorio" ] && cd "$HOME/Escritorio"
 
-# Lanzar Fastfetch (El dragón rojo configurado en config.jsonc)
 fastfetch
 # --- END CUSTOM CONFIG ---
 EOF
@@ -123,6 +113,6 @@ CURRENT_USER=$(whoami)
 sudo chsh -s "$(which zsh)" "$CURRENT_USER"
 
 echo "----------------------------------------------------------"
-echo "   Setup Complete!" Please restart your terminal to see the changes.
-echo "   Remember to set your terminal font to 'Hack Nerd Font Mono' for best experience
+echo "   Setup Complete! Please restart your terminal."
+echo "   Font: 'Hack Nerd Font Mono'"
 echo "----------------------------------------------------------"

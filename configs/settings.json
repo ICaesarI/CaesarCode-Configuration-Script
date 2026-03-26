@@ -1,5 +1,6 @@
 {
   "workbench.colorTheme": "Tokyo Night Storm",
+  "workbench.iconTheme": "material-icon-theme",
   "workbench.editor.empty.hint": "hidden",
   "workbench.startupEditor": "none",
   "workbench.activityBar.location": "hidden",
@@ -20,6 +21,8 @@
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.matchBrackets": "never",
   "editor.glyphMargin": true,
+  "editor.fontLigatures": false,
+  "editor.fontVariations": false,
 
   // ==== TERMINAL ====
   "terminal.integrated.defaultProfile.windows": "Git Bash",
@@ -29,12 +32,26 @@
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.drawBoldTextInBrightColors": true,
   "terminal.integrated.minimumContrastRatio": 7,
-  "terminal.integrated.gpuAcceleration": "off","terminal.integrated.suggest.enabled": true,
+  "terminal.integrated.gpuAcceleration": "off",
+  "terminal.integrated.suggest.enabled": true,
+  "terminal.integrated.allowedLinkSchemes": [
+    "file",
+    "http",
+    "https",
+    "mailto",
+    "vscode",
+    "vscode-insiders",
+    "docker-desktop"
+  ],
 
   // ==== VENTANA ====
-  "window.titleBarStyle": "custom",  // Mantiene la barra integrada y funcional
-  "window.controlsStyle": "default", // Se restauran los botones nativos
-  "window.systemColorTheme": "dark","window.autoDetectColorScheme": false,// ==== CUSTOMIZE UI ====
+  "window.titleBarStyle": "custom",
+  "window.controlsStyle": "default",
+  "window.systemColorTheme": "dark",
+  "window.autoDetectColorScheme": false,
+  "window.newWindowProfile": "Predeterminado",
+
+  // ==== CUSTOMIZE UI ====
   "customizeUI.animations": true,
   "customizeUI.listRowHoverAnimation": true,
   "customizeUI.activityBar": "bottom",
@@ -49,7 +66,7 @@
   // ==== ANIMACIONES ====
   "animations.Enabled": true,
   "animations.Focus-Dimming-Mode": "Everything But Editor and Terminal",
-  "animations.Install-Method": "Custom CSS and JS", // puedes quitar esta si no quieres nada de la ext
+  "animations.Install-Method": "Custom CSS and JS",
 
   // ==== ARCHIVOS & EXPLORER ====
   "files.autoSave": "afterDelay",
@@ -61,11 +78,15 @@
   "git.autofetch": true,
   "git.confirmSync": false,
   "git.openRepositoryInParentFolders": "never",
+  "gitlens.ai.model": "vscode",
+  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+  "gitlens.graph.minimap.enabled": false,
 
-  // ==== JAVASCRIPT ====
+  // ==== LANGUAGES ====
   "javascript.updateImportsOnFileMove.enabled": "always",
   "python.analysis.typeCheckingMode": "basic",
   "python.languageServer": "Pylance",
+  "C_Cpp.autocompleteAddParentheses": true,
 
   // ==== LIVE SERVER ====
   "liveServer.settings.donotShowInfoMsg": true,
@@ -76,6 +97,7 @@
   "github.copilot.advanced": {
     "authProvider": "github"
   },
+  "github.copilot.nextEditSuggestions.enabled": true,
 
   // ==== SEGURIDAD ====
   "security.workspace.trust.untrustedFiles": "open",
@@ -90,6 +112,16 @@
     "rgba(79,236,236,0.3)"
   ],
 
+  // ==== HIGHLIGHT ON COPY ====
+  "highlight-on-copy.backgroundColor": "rgba(255, 0, 0, 0.3)",
+  "highlight-on-copy.highlightBorder": "1px solid red",
+  "highlight-on-copy.duration": 150,
+  "highlight-on-copy.revealInExplorer": true,
+
+  // ==== MATERIAL ICON THEME ====
+  "material-icon-theme.folders.theme": "specific",
+  "material-icon-theme.activeIconPack": "react_redux",
+
   // ==== MSSQL ====
   "mssql.connectionGroups": [
     {
@@ -99,41 +131,15 @@
   ],
   "mssql.connections": [],
 
-  // ==== COLORES CUSTOM ====
-  "workbench.colorCustomizations": {
-    },
-    "code-runner.runInTerminal": true,
-    "C_Cpp.autocompleteAddParentheses": true,
-    "vscode_custom_css.imports": [
-      "file:///c:/Users/La TryHard/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.7/dist/updateHandler.js"
-    ],
-    "terminal.integrated.allowedLinkSchemes": [
-      "file",
-      "http",
-      "https",
-      "mailto",
-      "vscode",
-      "vscode-insiders",
-      "docker-desktop"
-    ],
-    "github.copilot.nextEditSuggestions.enabled": true,
-    "launch": {
-      "configurations": [
-      
-      ]
-    },
-    "workbench.iconTheme": "bearded-icons",
-    "gitlens.ai.model": "vscode",
-    "gitlens.ai.vscode.model": "copilot:gpt-4.1",
-    "gitlens.graph.minimap.enabled": false,
-    "window.newWindowProfile": "Predeterminado",
-    "workbench.editorAssociations": {
-      "*.copilotmd": "vscode.markdown.preview.editor",
-      "*.docx": "default"
-    },
-    "editor.fontLigatures": false,
-    "workbench.settings.applyToAllProfiles": [
-      
-    ],
-    "editor.fontVariations": false
+  // ==== OTRAS CONFIGURACIONES ====
+  "workbench.colorCustomizations": {},
+  "code-runner.runInTerminal": true,
+  "vscode_custom_css.imports": [
+    "file:///c:/Users/La TryHard/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.7/dist/updateHandler.js"
+  ],
+  "workbench.editorAssociations": {
+    "*.copilotmd": "vscode.markdown.preview.editor",
+    "*.docx": "default"
+  },
+  "workbench.settings.applyToAllProfiles": []
 }
