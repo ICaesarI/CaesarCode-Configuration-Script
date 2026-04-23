@@ -7,8 +7,9 @@
   "workbench.sideBar.location": "right",
   "workbench.secondarySideBar.defaultVisibility": "hidden",
 
-  // ==== EDITOR ====
-  "editor.formatOnSave": false,
+  // ==== EDITOR (Configuración original mantenida) ====
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.wordWrap": "on",
   "editor.cursorBlinking": "expand",
   "editor.linkedEditing": true,
@@ -21,18 +22,29 @@
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.matchBrackets": "never",
   "editor.glyphMargin": true,
-  "editor.fontLigatures": false,
+  "editor.fontLigatures": true,
   "editor.fontVariations": false,
+  "editor.tabSize": 2,
 
-  // ==== TERMINAL ====
-  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  // ==== PRETTIER CONFIG (Estándar CaesarCode) ====
+  "prettier.semi": true,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "prettier.printWidth": 80,
+  "prettier.tabWidth": 2,
+
+  // ==== CONSOLE NINJA ====
+  "console-ninja.showInStatusBar": true,
+  "console-ninja.logPlacement": "inline",
+
+  // ==== TERMINAL (Ajustado para Mac) ====
   "terminal.integrated.fontFamily": "'Cascadia Code', 'Courier New', monospace",
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.cursorStyle": "underline",
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.drawBoldTextInBrightColors": true,
   "terminal.integrated.minimumContrastRatio": 7,
-  "terminal.integrated.gpuAcceleration": "off",
+  "terminal.integrated.gpuAcceleration": "auto",
   "terminal.integrated.suggest.enabled": true,
   "terminal.integrated.allowedLinkSchemes": [
     "file",
@@ -49,24 +61,11 @@
   "window.controlsStyle": "default",
   "window.systemColorTheme": "dark",
   "window.autoDetectColorScheme": false,
-  "window.newWindowProfile": "Predeterminado",
-
-  // ==== CUSTOMIZE UI ====
-  "customizeUI.animations": true,
-  "customizeUI.listRowHoverAnimation": true,
-  "customizeUI.activityBar": "bottom",
-  "customizeUI.statusBar": "hidden",
-
-  // ==== VIBRANCY ====
-  "vibrancy.enabled": true,
-  "vibrancy.theme": "acrylic",
-  "vibrancy.effect": "acrylic",
-  "vibrancy.opacity": 0.6,
 
   // ==== ANIMACIONES ====
   "animations.Enabled": true,
   "animations.Focus-Dimming-Mode": "Everything But Editor and Terminal",
-  "animations.Install-Method": "Custom CSS and JS",
+  "animations.Install-Method": "Install via extension",
 
   // ==== ARCHIVOS & EXPLORER ====
   "files.autoSave": "afterDelay",
@@ -134,12 +133,10 @@
   // ==== OTRAS CONFIGURACIONES ====
   "workbench.colorCustomizations": {},
   "code-runner.runInTerminal": true,
-  "vscode_custom_css.imports": [
-    "file:///c:/Users/La TryHard/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.7/dist/updateHandler.js"
-  ],
   "workbench.editorAssociations": {
     "*.copilotmd": "vscode.markdown.preview.editor",
     "*.docx": "default"
   },
-  "workbench.settings.applyToAllProfiles": []
+  "workbench.settings.applyToAllProfiles": [],
+  "telemetry.telemetryLevel": "off"
 }
